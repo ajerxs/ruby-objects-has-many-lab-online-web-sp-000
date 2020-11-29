@@ -13,4 +13,11 @@ class Author
     Post.all.select {|post| post.author = self}
   end
 
+  def add_post(post)
+    @post << post
+    post.author = self
+    @@post_count += 1
+  end
+
+  
 end
